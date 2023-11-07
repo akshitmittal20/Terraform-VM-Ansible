@@ -1,0 +1,14 @@
+- name: Installation packages playbook
+  hosts: webserver
+  become: true
+  become_user: root
+  tasks:
+  - name: install Java
+    apt:
+     name: openjdk-11-jdk
+     state: present
+  - name: install python
+    package:
+     name: python
+     state: present
+
